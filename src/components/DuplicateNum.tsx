@@ -9,7 +9,11 @@ const DuplicateNum = () => {
     const duplicates: number[] = [];
 
     arr.forEach(num => {
-      numCounts[num] = (numCounts[num] || 0) + 1;
+      if (numCounts[num] === undefined) {
+        numCounts[num] = 1;
+      } else {
+        numCounts[num]++;
+      }
       // console.log(numCounts)
     });
 
